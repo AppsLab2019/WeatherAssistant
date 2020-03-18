@@ -20,7 +20,7 @@ namespace WeatherApp
         public Main Main { get; set; }
 
         [JsonProperty("visibility")]
-        public long Visibility { get; set; }
+        public long Visibility { get; set; }           
 
         [JsonProperty("wind")]
         public Wind Wind { get; set; }
@@ -39,6 +39,9 @@ namespace WeatherApp
 
         [JsonProperty("cod")]
         public long Cod { get; set; }
+        
+        [JsonProperty("precipitation")]
+        public Precipitation Precipitation { get; set; }
     }
 
 
@@ -46,6 +49,11 @@ namespace WeatherApp
     {
         [JsonProperty("all")]
         public long All { get; set; }
+    }
+    public class Precipitation
+    {
+        [JsonProperty("value")]
+        public long Value{ get; set; }
     }
 
     public class Coord
@@ -75,6 +83,7 @@ namespace WeatherApp
 
         [JsonProperty("temp_max")]
         public double TempMax { get; set; }
+    
     }
 
     public class Sys

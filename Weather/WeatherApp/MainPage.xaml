@@ -103,7 +103,12 @@
                        Style="{StaticResource labelStyle}" />
                 <Label Text="{Binding Weather[0].Visibility}" 
                        Style="{StaticResource labelResultStyle}" />
-                
+
+                <Label Text="Precipitation" 
+                       Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding Precipitation.Value }" 
+                       Style="{StaticResource labelResultStyle}" />
+               
                 <Label Text="Time of Sunrise" 
                        Style="{StaticResource labelStyle}" />
                 <Label Text="{Binding Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}" 
