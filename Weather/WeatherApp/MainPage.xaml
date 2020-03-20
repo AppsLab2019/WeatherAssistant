@@ -99,17 +99,17 @@
                        Style="{StaticResource labelStyle}" />
                 <Label Text="{Binding Main.Humidity}" 
                        Style="{StaticResource labelResultStyle}" />
-                
-                <Label Text="Testik" 
+
+                <Label Text="Description" 
                        Style="{StaticResource labelStyle}" />
                 <Label Text="{Binding Weather[0].Description,Converter={StaticResource capitalizeFirstConverter}}" 
                        Style="{StaticResource labelResultStyle}" />
-
+                
                 <Label Text="Rain" 
                        Style="{StaticResource labelStyle}" />
-                <Label Text="{Binding Rain.ThreeHours}" 
+                <Label Text="{Binding Rain.ThreeHours, Converter={StaticResource capitalizeFirstConverter}}"
                        Style="{StaticResource labelResultStyle}" />
-               
+
                 <Label Text="Time of Sunrise" 
                        Style="{StaticResource labelStyle}" />
                 <Label Text="{Binding Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}" 
