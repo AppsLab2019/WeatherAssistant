@@ -24,6 +24,9 @@ namespace WeatherApp
 
         [JsonProperty("wind")]
         public Wind Wind { get; set; }
+       
+        [JsonProperty("rain")]
+        public Rain Rain { get; set; }
 
         [JsonProperty("clouds")]
         public Clouds Clouds { get; set; }
@@ -38,24 +41,23 @@ namespace WeatherApp
         public long Id { get; set; }
 
         [JsonProperty("cod")]
-        public long Cod { get; set; }
-        
-        [JsonProperty("precipitation")]
-        public Precipitation Precipitation { get; set; }
+        public long Cod { get; set; }            
     }
 
+    public class Rain
+    {
+        [JsonProperty("1h")]
+        public double OneHour { get; set; }
+        [JsonProperty("3h")]
+        public double ThreeHours { get; set; }
+    }
 
     public class Clouds
     {
         [JsonProperty("all")]
         public long All { get; set; }
     }
-    public class Precipitation
-    {
-        [JsonProperty("value")]
-        public long Value{ get; set; }
-    }
-
+   
     public class Coord
     {
         [JsonProperty("lon")]

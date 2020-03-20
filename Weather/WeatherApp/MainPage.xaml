@@ -20,9 +20,10 @@
                 <Setter Property="Margin" 
                         Value="10,0,0,0" />
             </Style>
-            
+
             <local:LongToDateTimeConverter x:Key="longToDateTimeConverter" />
-            <local:FahrenheitToCelsiusConvertet x:Key="fahrenheitToCelsius"/>
+            <local:CapitalizeFirstConverter x:Key="capitalizeFirstConverter" />
+            <local:RoundAndUnitConverter x:Key="roundAndUnitConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -81,12 +82,12 @@
                 
                 <Label Text="Temperature" 
                        Style="{StaticResource labelStyle}" />
-                <Label Text="{Binding Main.Temperature, Converter={StaticResource fahrenheitToCelsius}} " 
+                <Label Text= "{Binding Main.Temperature,Converter={StaticResource roundAndUnitConverter}}" 
                        Style="{StaticResource labelResultStyle}" />
 
                 <Label Text="FeelsLike" 
                        Style="{StaticResource labelStyle}" />
-                <Label Text="{Binding Main.FeelsLike, Converter={StaticResource fahrenheitToCelsius}}" 
+                <Label Text="{Binding Main.FeelsLike,Converter={StaticResource roundAndUnitConverter}}" 
                        Style="{StaticResource labelResultStyle}" />
 
                 <Label Text="Wind Speed" 
@@ -99,14 +100,14 @@
                 <Label Text="{Binding Main.Humidity}" 
                        Style="{StaticResource labelResultStyle}" />
                 
-                <Label Text="Visibility" 
+                <Label Text="Testik" 
                        Style="{StaticResource labelStyle}" />
-                <Label Text="{Binding Weather[0].Visibility}" 
+                <Label Text="{Binding Weather[0].Description,Converter={StaticResource capitalizeFirstConverter}}" 
                        Style="{StaticResource labelResultStyle}" />
 
-                <Label Text="Precipitation" 
+                <Label Text="Rain" 
                        Style="{StaticResource labelStyle}" />
-                <Label Text="{Binding Precipitation.Value }" 
+                <Label Text="{Binding Rain.ThreeHours}" 
                        Style="{StaticResource labelResultStyle}" />
                
                 <Label Text="Time of Sunrise" 
@@ -118,6 +119,8 @@
                        Style="{StaticResource labelStyle}" />
                 <Label Text="{Binding Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}" 
                        Style="{StaticResource labelResultStyle}" />
+
+                <Image Source="pedo.jpg"/>
             </StackLayout>
         </ScrollView>
     </StackLayout>    

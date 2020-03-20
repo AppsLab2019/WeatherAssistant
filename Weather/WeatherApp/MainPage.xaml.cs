@@ -26,8 +26,9 @@ namespace WeatherApp
         {
             string requestUri = endpoint;
             requestUri += $"?q={_cityEntry.Text}";
-            requestUri += "&units=imperial"; // or units=metric
+            requestUri += "&units=metric"; // or units=metric
             requestUri += $"&APPID={Constants.OpenWeatherMapAPIKey}";
+            requestUri += "&lang=sk";
             return requestUri;
         }
     }
