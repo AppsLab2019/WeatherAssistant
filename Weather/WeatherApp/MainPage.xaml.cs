@@ -5,7 +5,7 @@ namespace WeatherApp
 {
     public partial class MainPage : ContentPage
     {
-        RestService _restService;
+        readonly RestService _restService;
 
         public MainPage()
         {
@@ -22,7 +22,7 @@ namespace WeatherApp
             }
         }
 
-        string GenerateRequestUri(string endpoint)
+        private string GenerateRequestUri(string endpoint)
         {
             string requestUri = endpoint;
             requestUri += $"?q={_cityEntry.Text}";
