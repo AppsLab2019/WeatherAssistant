@@ -125,7 +125,7 @@
                 <Label Text="{Binding Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}" 
                        Style="{StaticResource labelResultStyle}" />
 
-                <Image Source="pedo.jpg"/>
+                <Image x:Name="FigureImage" Source="fuha.jpg"/>
             </StackLayout>
         </ScrollView>
     </StackLayout>    
