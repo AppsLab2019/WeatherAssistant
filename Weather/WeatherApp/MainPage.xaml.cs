@@ -26,35 +26,58 @@ namespace WeatherApp
                 WeatherData weatherData = await _restService.GetWeatherData(GenerateRequestUri(Constants.OpenWeatherMapEndpoint));
                 BindingContext = weatherData;
 
-                
 
-                // if (weatherData.Rain.OneHour == 0 && weatherData.Snow.OneHour == 0)
+
+                // if (weatherData.Rain.ThreeHours == 0 && weatherData.Snow.ThreeHours == 0)
                 if (weatherData.Rain == null && weatherData.Snow == null)
-                {
-                    if (weatherData.Clouds.All <= 40)
-                    {
-                        // 1. moznost
-                        if (weatherData.Main.FeelsLike > 30)
+                {                                                   
+                        if (weatherData.Main.FeelsLike >= 26)
                         {
                             FigureImage.Source = "panacik1.png";
                         }
-                        if (weatherData.Main.FeelsLike > 20)
+                        if (weatherData.Main.FeelsLike >= 19)
                         {
                             FigureImage.Source = "panacik2.png";
                         }
-                        // ...
-                    }
-                    else
-                    {
-                        // 2. moznost
-                    }
+                        if (weatherData.Main.FeelsLike >= 10)
+                        {
+                            FigureImage.Source = "panacik3.png";
+                        }
+                        if (weatherData.Main.FeelsLike >= 0)
+                        {
+                            FigureImage.Source = "panacik4.png";
+                        }
+                        if (weatherData.Main.FeelsLike <0)
+                        {
+                            FigureImage.Source = "panacik5.png";
+                        }                                 
                 }
                 else
                 {
-                    // 3. moznost
+                    if (weatherData.Main.FeelsLike >= 26)
+                    {
+                        FigureImage.Source = "panacik1+.png";
+                    }
+                    if (weatherData.Main.FeelsLike >= 19)
+                    {
+                        FigureImage.Source = "panacik2+.png";
+                    }
+                    if (weatherData.Main.FeelsLike >= 10)
+                    {
+                        FigureImage.Source = "panacik3+.png";
+                    }
+                    if (weatherData.Main.FeelsLike >= 0)
+                    {
+                        FigureImage.Source = "panacik4+.png";
+                    }
+                    if (weatherData.Main.FeelsLike < 0)
+                    {
+                        FigureImage.Source = "panacik5+.png";
+                    }
                 }
             }
         }
+
 
         private string GenerateRequestUri(string endpoint)
         {

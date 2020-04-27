@@ -99,6 +99,11 @@
                        Style="{StaticResource labelStyle}" />
                 <Label Text="{Binding Main.Humidity}" 
                        Style="{StaticResource labelResultStyle}" />
+              
+                <Label Text="Oblačnosť" 
+                       Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding Clouds.All}" 
+                       Style="{StaticResource labelResultStyle}" />
 
                 <Label Text="Infošky" 
                        Style="{StaticResource labelStyle}" />
