@@ -6,18 +6,9 @@
              xmlns:local="clr-namespace:WeatherApp"
              mc:Ignorable="d"
              x:Class="WeatherApp.AppShell"
-             BackgroundColor="#333333">
+             BackgroundColor="#333333"
+             FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
 
-
-    <FlyoutItem Title="Moja aktuálna poloha" Icon="location12.jpg">
-        <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
-    </FlyoutItem>
-    
-    <FlyoutItem Title="Kde sa chystám" Icon="plussign.jpg">
-        <ShellContent ContentTemplate="{DataTemplate local:Page1}"/>
-    </FlyoutItem>
-    
-    <FlyoutItem Title="Kto som" Icon="fuha.jpg">
-        <ShellContent ContentTemplate="{DataTemplate local:About}"/>
-    </FlyoutItem>
+    <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
 </Shell>
